@@ -1,10 +1,10 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 
-import { AnimatePresence, motion } from 'framer-motion'
-import { Carousel } from 'react-responsive-carousel'
+import {AnimatePresence, motion} from 'framer-motion'
+import {Carousel} from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import {
@@ -22,19 +22,19 @@ import Card from './components/Card'
 import Filter from './components/Filter'
 
 import './Main.scss'
-import { UseTg } from '../hooks/useTg'
+import {UseTg} from '../hooks/useTg'
 
 type SearchParamProps = {
   searchParams: Record<string, string> | null | undefined
 }
 
-export default function Main({ searchParams }: SearchParamProps) {
+export default function Main({searchParams}: SearchParamProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const { user, tg } = UseTg()
+  const {user, tg} = UseTg()
 
   useEffect(() => {
-    tg.ready()
-    tg.expand()
+    tg?.ready()
+    tg?.expand()
   }, [user, tg])
 
   const openModal = () => {
@@ -240,10 +240,10 @@ export default function Main({ searchParams }: SearchParamProps) {
         <AnimatePresence>
           {card && isModalOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 1000 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 1000 }}
-              transition={{ duration: 0.5 }}
+              initial={{opacity: 0, y: 1000}}
+              animate={{opacity: 1, y: 0}}
+              exit={{opacity: 0, y: 1000}}
+              transition={{duration: 0.5}}
               className='fixed inset-0 modal'
             >
               <Card closeModal={closeModal} />
@@ -254,10 +254,10 @@ export default function Main({ searchParams }: SearchParamProps) {
         <AnimatePresence>
           {filter && isModalOpen && (
             <motion.div
-              initial={{ opacity: 0, y: 1000 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 1000 }}
-              transition={{ duration: 0.5 }}
+              initial={{opacity: 0, y: 1000}}
+              animate={{opacity: 1, y: 0}}
+              exit={{opacity: 0, y: 1000}}
+              transition={{duration: 0.5}}
               className='fixed inset-0 modal'
             >
               <Filter closeModal={closeModal} />

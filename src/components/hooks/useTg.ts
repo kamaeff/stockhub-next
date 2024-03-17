@@ -1,18 +1,27 @@
 declare const window: any
-const tg = window.Telegram.WebApp
 
 export const UseTg = () => {
+  const tg = window.Telegram?.WebApp
+
   const onClose = (): void => {
-    tg.close()
+    if (tg && tg.close) {
+      tg.close()
+    } else {
+      console.error('Telegram WebApp close method is not available.')
+    }
   }
 
   const onToggleButton = (): void => {
-    tg.MainButton.isVisible ? tg.MainButton.hide() : tg.MainButton.show()
+    if (tg && tg.MainButton) {
+      tg.MainButton.isVisible ? tg.MainButton.hide() : tg.MainButton.show()
+    } else {
+      console.error('Telegram WebApp MainButton is not available.')
+    }
   }
 
   return {
     tg,
-    user: tg.initDataUnsafe?.user,
+    user: tg?.initDataUnsafe?.user,
     onClose,
     onToggleButton,
   }
