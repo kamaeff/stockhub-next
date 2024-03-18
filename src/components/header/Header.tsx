@@ -29,21 +29,23 @@ export default function Header({searchParams}: SearchParamProps) {
 
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
-      {user?.first_name ? (
-        <Link
-          href='/?profile=true'
-          onClick={openModal}
-          className='pl-2 flex items-center gap-1'
-        >
-          <CircleUser strokeWidth={1} size={32} />
-          <span>{user.first_name}</span>
-        </Link>
-      ) : (
-        <div className='flex items-center'>
-          <Loader className='animate-spin-slow spinner' size={34} />
-          <span className='font-medium text-2xl'>💀</span>
-        </div>
-      )}
+      {/* TODO: Сделать проверку на реального юзера тг
+        BUG: Пофиксить баг с неправильной загрузкой юзера */}
+
+      <Link
+        href='/?profile=true'
+        onClick={openModal}
+        className='pl-2 flex items-center gap-1'
+      >
+        <CircleUser strokeWidth={1} size={32} />
+        <span>
+          {user?.first_name ? (
+            user.first_name
+          ) : (
+            <Loader className='animate-spin-slow spinner' size={34} />
+          )}
+        </span>
+      </Link>
 
       <Link
         href='/?basket=true'
