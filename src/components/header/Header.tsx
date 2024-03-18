@@ -32,7 +32,11 @@ export default function Header({searchParams}: SearchParamProps) {
       {/* TODO: Сделать проверку на реального юзера тг
         BUG: Пофиксить баг с неправильной загрузкой юзера */}
 
-      <div className=''>
+      <Link
+        href='/?profile=true'
+        onClick={openModal}
+        className='pl-2 flex items-center gap-1'
+      >
         <CircleUser strokeWidth={1} size={32} />
         <span>
           {user?.first_name ? (
@@ -41,12 +45,7 @@ export default function Header({searchParams}: SearchParamProps) {
             <Loader className='animate-spin-slow spinner' size={34} />
           )}
         </span>
-        <Link
-          href='/?profile=true'
-          onClick={openModal}
-          className='pl-2 flex items-center gap-1'
-        ></Link>
-      </div>
+      </Link>
 
       <Link
         href='/?basket=true'
