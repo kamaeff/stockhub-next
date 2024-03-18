@@ -33,8 +33,8 @@ export default function Main({searchParams}: SearchParamProps) {
   const {user, tg} = UseTg()
 
   useEffect(() => {
-    tg.ready()
-    tg.expand()
+    tg?.ready()
+    tg?.expand()
   }, [user, tg])
 
   const openModal = () => {
