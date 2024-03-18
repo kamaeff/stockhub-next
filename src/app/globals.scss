@@ -22,12 +22,13 @@
 }
 
 body {
+  position: relative;
   max-width: 440px;
   margin: auto;
   font-family: var(--rubik), sans-serif;
 
+  background: var(--bg-sec);
   color: var(--text);
-  background-color: vae(--bg-sec);
 }
 
 .modal {
@@ -63,7 +64,7 @@ body {
 
 .circle {
   position: absolute;
-  background-color: var(--bg);
+  background-color: var(--text);
   border-radius: 50%;
   animation: move linear infinite;
   z-index: -1000;
