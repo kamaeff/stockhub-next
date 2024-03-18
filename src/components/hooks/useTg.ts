@@ -1,13 +1,13 @@
 interface CustomWindow extends Window {
-  Telegram: {
-    WebApp: any
+  Telegram?: {
+    WebApp?: any
   }
 }
 
 declare const window: CustomWindow
 
 export const UseTg = () => {
-  const tg = window.Telegram.WebApp
+  const tg = typeof window !== 'undefined' ? window.Telegram?.WebApp : null
 
   const onClose = (): void => {
     if (tg && tg.close) {
@@ -27,7 +27,7 @@ export const UseTg = () => {
 
   return {
     tg,
-    user: tg?.initDataUnsafe.user,
+    user: tg?.initDataUnsafe?.user,
     onClose,
     onToggleButton,
   }
