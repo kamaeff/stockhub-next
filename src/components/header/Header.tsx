@@ -31,7 +31,7 @@ export default function Header({searchParams}: SearchParamProps) {
       {user ? (
         <button className='flex gap-2 items-center' onClick={openModal}>
           <CircleUser strokeWidth={1} size={32} />
-          {user?.first_name}
+          {user.first_name}
         </button>
       ) : (
         <div className='flex items-center gap-1 header__bg-item'>

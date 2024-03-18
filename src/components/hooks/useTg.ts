@@ -7,7 +7,7 @@ interface CustomWindow extends Window {
 declare const window: CustomWindow
 
 export const UseTg = () => {
-  const tg = typeof window !== 'undefined' ? window.Telegram?.WebApp : null
+  const tg = window.Telegram?.WebApp
 
   const onClose = (): void => {
     if (tg && tg.close) {
