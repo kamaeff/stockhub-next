@@ -40,7 +40,7 @@ export default function Header({searchParams}: SearchParamProps) {
         onClick={openModal}
         className='pl-2 flex items-center gap-1'
       >
-        <CircleUser strokeWidth={1} size={32} />
+        <CircleUser strokeWidth={1} size={40} />
       </Link>
 
       <Image priority={true} src={logo} alt='logo' />
@@ -50,7 +50,7 @@ export default function Header({searchParams}: SearchParamProps) {
         onClick={openModal}
         className='flex items-center pr-2'
       >
-        <PackageOpen size={32} strokeWidth={1} />
+        <PackageOpen size={40} strokeWidth={1} />
         <span className='italic text-xl pt-6'>2</span>
         {/* TODO: Выводит из бд колличество товаров в корзине */}
       </Link>
