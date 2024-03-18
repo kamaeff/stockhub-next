@@ -30,7 +30,7 @@ export default function Header({searchParams}: SearchParamProps) {
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
       <div className=''>
-        {user?.first_name ? (
+        {user && user?.first_name ? (
           <Link
             href='/?profile=true'
             onClick={openModal}

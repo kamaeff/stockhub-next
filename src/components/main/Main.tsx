@@ -78,7 +78,7 @@ export default function Main({searchParams}: SearchParamProps) {
             <p>Одежда</p>
           </button>
 
-          <button className='flex items-center text-center gap-3 px-12 py-2rounded-lg'>
+          <button className='flex items-center text-center gap-3 px-12 py-2 rounded-lg main__btn-item'>
             <Footprints />
             <p>Обувь</p>
           </button>
