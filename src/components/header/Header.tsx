@@ -20,6 +20,8 @@ export default function Header({searchParams}: SearchParamProps) {
 
   const closeModal = () => {
     setIsModalOpen(false)
+    setIsBasketModalOpen(false)
+    setIsProfileModalOpen(false)
   }
 
   const openBasketModal = () => {
