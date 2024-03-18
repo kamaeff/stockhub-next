@@ -25,7 +25,6 @@ export default function Header({searchParams}: SearchParamProps) {
   }
 
   const basket = searchParams?.basket
-  const profile = searchParams?.profile
 
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
@@ -66,7 +65,7 @@ export default function Header({searchParams}: SearchParamProps) {
       </AnimatePresence>
 
       <AnimatePresence>
-        {profile && isModalOpen && (
+        {isModalOpen && (
           <motion.div
             initial={{opacity: 0, y: 1000}}
             animate={{opacity: 1, y: 0}}
