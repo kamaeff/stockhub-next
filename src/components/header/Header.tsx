@@ -13,7 +13,7 @@ type SearchParamProps = {
 }
 
 export default function Header({searchParams}: SearchParamProps) {
-  const {user} = UseTg()
+  const {user, tg} = UseTg()
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -39,7 +39,7 @@ export default function Header({searchParams}: SearchParamProps) {
       >
         <CircleUser strokeWidth={1} size={32} />
         <span>
-          {user?.first_name ? (
+          {tg?.initDataUnsafe.user.first_name ? (
             user.first_name
           ) : (
             <Loader className='animate-spin-slow spinner' size={34} />
