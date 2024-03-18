@@ -13,7 +13,7 @@ type SearchParamProps = {
 }
 
 export default function Header({searchParams}: SearchParamProps) {
-  const {user, tg} = UseTg()
+  const {user} = UseTg()
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -32,20 +32,21 @@ export default function Header({searchParams}: SearchParamProps) {
       {/* TODO: Сделать проверку на реального юзера тг
         BUG: Пофиксить баг с неправильной загрузкой юзера */}
 
-      <Link
-        href='/?profile=true'
-        onClick={openModal}
-        className='pl-2 flex items-center gap-1'
-      >
+      <div className=''>
         <CircleUser strokeWidth={1} size={32} />
         <span>
-          {tg?.initDataUnsafe.user.first_name ? (
+          {user?.first_name ? (
             user.first_name
           ) : (
             <Loader className='animate-spin-slow spinner' size={34} />
           )}
         </span>
-      </Link>
+        <Link
+          href='/?profile=true'
+          onClick={openModal}
+          className='pl-2 flex items-center gap-1'
+        ></Link>
+      </div>
 
       <Link
         href='/?basket=true'
