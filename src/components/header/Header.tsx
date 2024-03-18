@@ -1,17 +1,12 @@
 'use client'
 import {CircleUser, Home, Loader, PackageOpen} from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
-import Modal from './components/Basket'
-
 import {AnimatePresence, motion} from 'framer-motion'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
-import basketPic from '../../../public/basket.svg'
-import logo from '../../../public/logo.png'
+import Modal from './components/Basket'
 import {UseTg} from '../hooks/useTg'
 import Profile from './components/profile/Profile'
-import {profile} from 'console'
 
 type SearchParamProps = {
   searchParams: Record<string, string> | null | undefined
@@ -31,6 +26,8 @@ export default function Header({searchParams}: SearchParamProps) {
 
   const basket = searchParams?.basket
   const profile = searchParams?.profile
+
+  useEffect(() => {}, [user])
 
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
