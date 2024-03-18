@@ -36,14 +36,17 @@ export default function Header({searchParams}: SearchParamProps) {
     <div className='flex justify-between items-center mt-3 mx-2'>
       <div className=''>
         {user?.first_name ? (
-          <Link
-            href='/?profile=true'
-            onClick={openModal}
-            className='pl-2 flex items-center gap-1'
-          >
-            <CircleUser strokeWidth={1} size={32} />
-            {user.first_name}
-          </Link>
+          <>
+            <div className='flex items-center gap-1'>
+              <CircleUser strokeWidth={1} size={32} />
+              {user.first_name}
+            </div>
+            <Link
+              href='/?profile=true'
+              onClick={openModal}
+              className='pl-2 '
+            ></Link>
+          </>
         ) : (
           <div className='flex items-center'>
             <Loader className='animate-spin-slow spinner' size={34} />
