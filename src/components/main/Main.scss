@@ -21,6 +21,8 @@
     max-width: 410px;
     height: 250px;
 
+    background-color: var(--bg);
+
     align-items: center;
     border-top-left-radius: 60px;
     border-top-right-radius: 25px;
@@ -42,6 +44,8 @@
   height: 210px;
 
   border-radius: 12px;
+
+  background-color: var(--bg);
 
   &__carousel {
     width: 190px;

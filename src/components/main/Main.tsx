@@ -168,7 +168,7 @@ export default function Main({searchParams}: SearchParamProps) {
               </div>
 
               <div className='flex justify-between items-center mt-1'>
-                <p className='font-medium italic text-xl p-2 bg-gray-100 rounded-lg'>
+                <p className='font-medium italic text-xl p-2 rounded-lg'>
                   23 457₽
                 </p>
                 <ArrowBigUpDash size={30} />
@@ -178,7 +178,7 @@ export default function Main({searchParams}: SearchParamProps) {
         </Link>
 
         <Link className='m-auto' href='/?card=true' onClick={openModal}>
-          <div className='flex items-center justify-around m-auto product bg-white'>
+          <div className='flex items-center justify-around m-auto product '>
             <div className='product__carousel'>
               <Carousel
                 infiniteLoop={true}
@@ -227,7 +227,7 @@ export default function Main({searchParams}: SearchParamProps) {
               </div>
 
               <div className='flex justify-between items-center mt-1'>
-                <p className='font-medium italic text-xl p-2 bg-gray-100 rounded-lg'>
+                <p className='font-medium italic text-xl p-2 rounded-lg'>
                   23 457₽
                 </p>
                 <ArrowBigUpDash size={30} />
