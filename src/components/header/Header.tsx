@@ -8,6 +8,9 @@ import Modal from './components/Basket'
 import {UseTg} from '../hooks/useTg'
 import Profile from './components/profile/Profile'
 
+import logo from '../../../public/logo.png'
+import Image from 'next/image'
+
 type SearchParamProps = {
   searchParams: Record<string, string> | null | undefined
 }
@@ -34,6 +37,8 @@ export default function Header({searchParams}: SearchParamProps) {
       <button onClick={openModal} className='pl-2 flex items-center gap-1'>
         <CircleUser strokeWidth={1} size={40} />
       </button>
+
+      <Image src={logo} priority={true} alt='logo' />
 
       <Link
         href='/?basket=true'
