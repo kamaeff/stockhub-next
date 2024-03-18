@@ -13,7 +13,7 @@ type SearchParamProps = {
 }
 
 export default function Header({searchParams}: SearchParamProps) {
-  const {user, tg} = UseTg()
+  const {user} = UseTg()
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -27,20 +27,17 @@ export default function Header({searchParams}: SearchParamProps) {
   const basket = searchParams?.basket
   const profile = searchParams?.profile
 
-  useEffect(() => {
-    tg?.ready()
-    tg?.expand()
-  }, [tg, user])
-
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
       <div className=''>
         {user?.first_name ? (
-          <Link href='/?profile=true' onClick={openModal} className='pl-2 '>
-            <div className='flex items-center gap-1'>
-              <CircleUser strokeWidth={1} size={32} />
-              <span>{user?.first_name}</span>
-            </div>
+          <Link
+            href='/?profile=true'
+            onClick={openModal}
+            className='pl-2 flex items-center gap-1'
+          >
+            <CircleUser strokeWidth={1} size={32} />
+            <span>{user?.first_name}</span>
           </Link>
         ) : (
           <div className='flex items-center'>
