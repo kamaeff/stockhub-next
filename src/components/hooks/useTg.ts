@@ -27,7 +27,7 @@ export const UseTg = () => {
 
   return {
     tg,
-    user: tg?.initDataUnsafe?.user,
+    user: tg?.initDataUnsafe.user,
     onClose,
     onToggleButton,
   }
