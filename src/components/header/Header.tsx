@@ -13,7 +13,7 @@ type SearchParamProps = {
 }
 
 export default function Header({searchParams}: SearchParamProps) {
-  const {user} = UseTg()
+  const {user, tg} = UseTg()
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => {
@@ -27,7 +27,10 @@ export default function Header({searchParams}: SearchParamProps) {
   const basket = searchParams?.basket
   const profile = searchParams?.profile
 
-  useEffect(() => {}, [user])
+  useEffect(() => {
+    tg?.ready()
+    tg?.expand()
+  }, [tg, user])
 
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>

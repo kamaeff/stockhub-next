@@ -1,28 +1,48 @@
-interface CustomWindow extends Window {
-  Telegram?: {
-    WebApp?: any
-  }
-}
+// interface CustomWindow extends Window {
+//   Telegram?: {
+//     WebApp?: any
+//   }
+// }
 
-declare const window: CustomWindow
+// declare const window: CustomWindow
+
+// export const UseTg = () => {
+//   const tg = typeof window !== 'undefined' ? window.Telegram?.WebApp : null
+
+//   const onClose = (): void => {
+//     if (tg && tg.close) {
+//       tg.close()
+//     } else {
+//       console.error('Telegram WebApp close method is not available.')
+//     }
+//   }
+
+//   const onToggleButton = (): void => {
+//     if (tg && tg.MainButton) {
+//       tg.MainButton.isVisible ? tg.MainButton.hide() : tg.MainButton.show()
+//     } else {
+//       console.error('Telegram WebApp MainButton is not available.')
+//     }
+//   }
+
+//   return {
+//     tg,
+//     user: tg?.initDataUnsafe?.user,
+//     onClose,
+//     onToggleButton,
+//   }
+// }
+
+declare const window: any
+const tg = window.Telegram?.WebApp
 
 export const UseTg = () => {
-  const tg = typeof window !== 'undefined' ? window.Telegram?.WebApp : null
-
   const onClose = (): void => {
-    if (tg && tg.close) {
-      tg.close()
-    } else {
-      console.error('Telegram WebApp close method is not available.')
-    }
+    tg.close()
   }
 
   const onToggleButton = (): void => {
-    if (tg && tg.MainButton) {
-      tg.MainButton.isVisible ? tg.MainButton.hide() : tg.MainButton.show()
-    } else {
-      console.error('Telegram WebApp MainButton is not available.')
-    }
+    tg.MainButton.isVisible ? tg.MainButton.hide() : tg.MainButton.show()
   }
 
   return {
