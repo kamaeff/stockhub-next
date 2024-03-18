@@ -52,7 +52,7 @@ const Profile = ({closeModal}: ModalProps) => {
         console.log('skip')
       }
     }
-    userReq(user?.id ? user?.id.toString() : '307777256')
+    userReq(user?.id.toString())
   }, [tg, user])
 
   return (
