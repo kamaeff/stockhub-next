@@ -41,6 +41,10 @@ body {
   border-top-left-radius: 40px;
 }
 
+.spinner {
+  color: var(--text);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

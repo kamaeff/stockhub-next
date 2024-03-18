@@ -1,0 +1,11 @@
+.profile {
+  &__icon,
+  &__person {
+    background: var(--bg-sec);
+    color: var(--text);
+
+    padding: 5px 5px;
+
+    border-radius: 9px;
+  }
+}

@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Rubik } from 'next/font/google'
+import type {Metadata} from 'next'
+import {Rubik} from 'next/font/google'
 import './globals.scss'
 import Script from 'next/script'
 
@@ -8,7 +8,7 @@ const rubik = Rubik({
   weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
   variable: '--rubik',
-  style: ['normal', 'italic']
+  style: ['normal', 'italic'],
 })
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode
 }>) {

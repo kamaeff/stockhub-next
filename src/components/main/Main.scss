@@ -2,15 +2,31 @@
   display: none;
 }
 
-.main__carousel {
-  max-width: 410px;
-  height: 250px;
+.main {
+  &__search {
+    &--input,
+    &--filter {
+      background: var(--bg);
+      color: var(--text);
 
-  align-items: center;
-  border-top-left-radius: 60px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 60px;
+      border-radius: 9px;
+
+      &_text {
+        background-color: var(--bg);
+      }
+    }
+  }
+
+  &__carousel {
+    max-width: 410px;
+    height: 250px;
+
+    align-items: center;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 60px;
+  }
 }
 
 .slider__item {

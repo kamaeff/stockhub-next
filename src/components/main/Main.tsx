@@ -52,18 +52,18 @@ export default function Main({searchParams}: SearchParamProps) {
     <>
       <div className=''>
         <div className=''>
-          <div className='flex gap-2 justify-center items-center -mt-3'>
-            <div className='flex gap-1.5 p-3.5 bg-white rounded-lg shadow-lg'>
+          <div className='flex gap-2 justify-center items-center'>
+            <div className='main__search--input flex gap-1.5 p-3.5'>
               <Search size={28} />
               <input
-                className='w-72 text-xl border-white outline-none'
+                className='main__search--input_text italic w-62 text-xl outline-none'
                 placeholder='Поиск'
               ></input>
             </div>
             <Link
               href='/?filter=true'
               onClick={openModal}
-              className='p-3.5 bg-white rounded-lg shadow-lg'
+              className='main__search--filter p-3.5'
             >
               <SlidersHorizontal size={28} />
             </Link>
@@ -73,18 +73,18 @@ export default function Main({searchParams}: SearchParamProps) {
         </div>
 
         <div className='w-96 flex m-auto justify-between my-3'>
-          <button className='flex items-center text-center gap-3 px-12 py-2 border-white bg-white rounded-lg'>
+          <button className='flex items-center text-center gap-3 px-12 py-2 rounded-lg'>
             <Shirt size={30} />
             <p>Одежда</p>
           </button>
 
-          <button className='flex items-center text-center gap-3 px-12 py-2 border-white bg-white rounded-lg'>
+          <button className='flex items-center text-center gap-3 px-12 py-2rounded-lg'>
             <Footprints />
             <p>Обувь</p>
           </button>
         </div>
 
-        <div className='flex justify-center items-center m-auto bg-white mt-3 main__carousel'>
+        <div className='flex justify-center items-center m-auto mt-3 main__carousel'>
           <Carousel
             infiniteLoop={true}
             autoPlay={true}
@@ -119,7 +119,7 @@ export default function Main({searchParams}: SearchParamProps) {
         </div>
 
         <Link className='m-auto' href='/?card=true' onClick={openModal}>
-          <div className='flex items-center justify-around m-auto product bg-white'>
+          <div className='flex items-center justify-around m-auto product '>
             <div className='product__carousel'>
               <Carousel
                 infiniteLoop={true}
