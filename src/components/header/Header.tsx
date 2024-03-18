@@ -32,20 +32,14 @@ export default function Header({searchParams}: SearchParamProps) {
       {/* TODO: Сделать проверку на реального юзера тг
         BUG: Пофиксить баг с неправильной загрузкой юзера */}
 
-      <Link
-        href='/?profile=true'
-        onClick={openModal}
-        className='pl-2 flex items-center gap-1'
-      >
+      <button onClick={openModal} className='pl-2 flex items-center gap-1'>
         <CircleUser strokeWidth={1} size={32} />
-        <span>
-          {user?.first_name ? (
-            user.first_name
-          ) : (
-            <Loader className='animate-spin-slow spinner' size={34} />
-          )}
-        </span>
-      </Link>
+        {user?.first_name ? (
+          user.first_name
+        ) : (
+          <Loader className='animate-spin-slow spinner' size={34} />
+        )}
+      </button>
 
       <Link
         href='/?basket=true'
