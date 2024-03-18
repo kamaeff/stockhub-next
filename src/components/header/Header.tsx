@@ -25,11 +25,10 @@ export default function Header({searchParams}: SearchParamProps) {
   }
 
   const basket = searchParams?.basket
-  // const profile = searchParams?.profile
 
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
-      {user?.first_name ? (
+      {user ? (
         <button className='flex gap-2 items-center' onClick={openModal}>
           <CircleUser strokeWidth={1} size={32} />
           {user?.first_name}
