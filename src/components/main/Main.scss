@@ -16,6 +16,11 @@
       }
     }
   }
+  &__btn {
+    &-item {
+      background-color: var(--bg);
+    }
+  }
 
   &__carousel {
     max-width: 410px;

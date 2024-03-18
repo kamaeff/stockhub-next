@@ -73,7 +73,7 @@ export default function Main({searchParams}: SearchParamProps) {
         </div>
 
         <div className='w-96 flex m-auto justify-between my-3'>
-          <button className='flex items-center text-center gap-3 px-12 py-2 rounded-lg'>
+          <button className='flex items-center text-center gap-3 px-12 py-2 rounded-lg main__btn-item'>
             <Shirt size={30} />
             <p>Одежда</p>
           </button>
