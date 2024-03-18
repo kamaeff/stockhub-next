@@ -25,20 +25,22 @@ export default function Header({searchParams}: SearchParamProps) {
   }
 
   const basket = searchParams?.basket
-  const profile = searchParams?.profile
+  // const profile = searchParams?.profile
 
   return (
     <div className='flex justify-between items-center mt-3 mx-2'>
-      {user?.first_name && (
-        <Link
-          href='/?profile=true'
-          onClick={openModal}
-          className='pl-2 flex items-center gap-1'
-        >
+      {user?.first_name ? (
+        <button className='flex gap-2 items-center' onClick={openModal}>
           <CircleUser strokeWidth={1} size={32} />
-          <span>{user.first_name}</span>
-        </Link>
+          {user?.first_name}
+        </button>
+      ) : (
+        <div className='flex items-center gap-1 header__bg-item'>
+          <Loader className='animate-spin-slow spinner' size={34} />
+          <span className='font-medium text-2xl'>💀</span>
+        </div>
       )}
+
       <Link
         href='/?basket=true'
         onClick={openModal}
@@ -64,7 +66,7 @@ export default function Header({searchParams}: SearchParamProps) {
       </AnimatePresence>
 
       <AnimatePresence>
-        {profile && isModalOpen && (
+        {isModalOpen && (
           <motion.div
             initial={{opacity: 0, y: 1000}}
             animate={{opacity: 1, y: 0}}
