@@ -15,21 +15,13 @@ type SearchParamProps = {
 export default function Header({searchParams}: SearchParamProps) {
   const {user} = UseTg()
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isBasketModalOpen, setIsBasketModalOpen] = useState(false)
-  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
+
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
 
   const closeModal = () => {
     setIsModalOpen(false)
-    setIsBasketModalOpen(false)
-    setIsProfileModalOpen(false)
-  }
-
-  const openBasketModal = () => {
-    setIsBasketModalOpen(true)
-  }
-
-  const openProfileModal = () => {
-    setIsProfileModalOpen(true)
   }
 
   const basket = searchParams?.basket
@@ -39,14 +31,15 @@ export default function Header({searchParams}: SearchParamProps) {
     <div className='flex justify-between items-center mt-3 mx-2'>
       <div className=''>
         {user?.first_name ? (
-          <Link
-            href='/?profile=true'
-            onClick={openProfileModal}
-            className='pl-2 flex items-center gap-1'
-          >
+          // <Link
+          //   href='/?profile=true'
+          //   onClick={openModal}
+          //   className='pl-2 flex items-center gap-1'
+          // >
+          <>
             <CircleUser strokeWidth={1} size={32} />
             <span>{user?.first_name}</span>
-          </Link>
+          </>
         ) : (
           <div className='flex items-center'>
             <Loader className='animate-spin-slow spinner' size={34} />
@@ -57,7 +50,7 @@ export default function Header({searchParams}: SearchParamProps) {
 
       <Link
         href='/?basket=true'
-        onClick={openBasketModal}
+        onClick={openModal}
         className='flex items-center pr-2'
       >
         <PackageOpen size={32} strokeWidth={1} />
@@ -66,7 +59,7 @@ export default function Header({searchParams}: SearchParamProps) {
       </Link>
 
       <AnimatePresence>
-        {basket && isBasketModalOpen && (
+        {basket && isModalOpen && (
           <motion.div
             initial={{opacity: 0, y: 1000}}
             animate={{opacity: 1, y: 0}}
@@ -80,7 +73,7 @@ export default function Header({searchParams}: SearchParamProps) {
       </AnimatePresence>
 
       <AnimatePresence>
-        {profile && isProfileModalOpen && (
+        {profile && isModalOpen && (
           <motion.div
             initial={{opacity: 0, y: 1000}}
             animate={{opacity: 1, y: 0}}
