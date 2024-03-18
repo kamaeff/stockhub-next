@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='ru'>
       <body className={rubik.className}>{children}</body>
       <Script src='https://telegram.org/js/telegram-web-app.js'></Script>
     </html>

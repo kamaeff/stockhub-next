@@ -1,6 +1,7 @@
 import Header from '@/components/header/Header'
 import Main from '@/components/main/Main'
 import Circles from './ui/Circles'
+
 interface SearchParamProps {
   searchParams: Record<string, string>
 }

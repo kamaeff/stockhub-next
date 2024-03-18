@@ -6,7 +6,7 @@ import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 
 import Modal from './components/Basket'
-import {UseTg} from '../hooks/useTg'
+import {UseTg} from '@/hooks/useTg'
 import Profile from './components/profile/Profile'
 
 import logo from '../../../public/logo.png'

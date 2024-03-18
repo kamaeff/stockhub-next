@@ -22,7 +22,7 @@ import Card from './components/Card'
 import Filter from './components/Filter'
 
 import './Main.scss'
-import {UseTg} from '../hooks/useTg'
+import {UseTg} from '../../hooks/useTg'
 
 type SearchParamProps = {
   searchParams: Record<string, string> | null | undefined

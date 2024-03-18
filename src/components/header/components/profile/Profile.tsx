@@ -13,7 +13,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
 import './profile.scss'
-import {UseTg} from '../../../hooks/useTg'
+import {UseTg} from '@/hooks/useTg'
 
 type ModalProps = {
   closeModal: () => void
@@ -84,8 +84,11 @@ const Profile = ({closeModal}: ModalProps) => {
             ))}
           </div>
         ) : (
-          <div className='inline-block'>
-            <Loader className='animate-spin-slow spinner' size={40} />
+          <div className='flex justify-center items-center relative'>
+            <Loader
+              className='animate-spin-slow spinner absolute top-60'
+              size={40}
+            />
           </div>
         )}
       </div>
