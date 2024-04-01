@@ -11,18 +11,6 @@ type ModalProps = {
 }
 
 export default function Card({closeModal}: ModalProps) {
-  const items = Array.from({length: 3}).map((_, index) => (
-    <div key={index}>
-      <Image
-        src={item}
-        priority={true}
-        width={350}
-        height={270}
-        alt='product'
-      />
-    </div>
-  ))
-
   return (
     <div className='flex relative flex-col'>
       <Link href='/'>
@@ -41,7 +29,15 @@ export default function Card({closeModal}: ModalProps) {
           interval={3000}
           showThumbs={false}
         >
-          {items}
+          <div>
+            <Image src={item} priority={true} alt='product' />
+          </div>
+          <div>
+            <Image src={item} priority={true} alt='product' />
+          </div>
+          <div>
+            <Image src={item} priority={true} alt='product' />
+          </div>
         </Carousel>
 
         <div className='max-w-80 text-justify mt-5'>
