@@ -33,7 +33,6 @@ body {
 
 .modal {
   z-index: 9999;
-  overflow: hidden;
   background: var(--bg);
   color: var(--text);
 
@@ -47,10 +46,9 @@ select {
   appearance: none;
   border: 0;
   outline: 0;
-  font: inherit;
   width: 300px;
   padding: 10px;
-  background: var(--text);
+  background: var(--bg);
   color: var(--bg-sec);
   border-radius: 0.25em;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
