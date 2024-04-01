@@ -32,7 +32,7 @@ export default function Card({closeModal}: ModalProps) {
             натуральной замши в том же оттенке.
           </p>
         </div>
-        <label htmlFor='size'>Разер</label>
+
         <select className='mt-5' name='size'>
           <option hidden>Выбери размер</option>
           <option value='8'>8 us</option>
