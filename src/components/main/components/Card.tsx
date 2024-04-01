@@ -2,6 +2,7 @@
 import {ChevronLeft, ChevronRight, X} from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import {Carousel} from 'react-responsive-carousel'
 
 import item from '../../../../public/ProductItem.png'
 
@@ -10,6 +11,12 @@ type ModalProps = {
 }
 
 export default function Card({closeModal}: ModalProps) {
+  const items = Array.from({length: 3}).map((_, index) => (
+    <div key={index}>
+      <Image src={item} priority={true} alt='product' />
+    </div>
+  ))
+
   return (
     <div className='flex relative flex-col'>
       <Link href='/'>
@@ -22,7 +29,14 @@ export default function Card({closeModal}: ModalProps) {
 
       {/* <div className='mt-20 text-3xl text-center'>Тут будет карточка товара</div> */}
       <div className='flex flex-col mt-14 items-center italic '>
-        <Image src={item} priority={true} alt='item' />
+        <Carousel
+          infiniteLoop={true}
+          autoPlay={true}
+          interval={3000}
+          showThumbs={false}
+        >
+          {items}
+        </Carousel>
 
         <div className='max-w-80 text-justify mt-5'>
           <h3 className='text-3xl mb-5'>Jordan 4 Retro SE Craft Photon Dust</h3>
