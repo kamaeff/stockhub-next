@@ -43,6 +43,30 @@ body {
   border-top-left-radius: 40px;
 }
 
+select {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  width: 300px;
+  padding: 10px;
+  background: var(--text);
+  color: var(--bg-sec);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  &::-ms-expand {
+    display: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  option {
+    color: inherit;
+    background-color: var(--text);
+  }
+}
+
 .spinner {
   color: var(--text);
 }
@@ -68,6 +92,20 @@ body {
   border-radius: 50%;
   animation: move linear infinite;
   z-index: -1000;
+}
+
+.basket,
+.order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket {
+  background: #edf200;
+}
+
+.order {
+  background: #0f8143;
 }
 
 @keyframes move {
