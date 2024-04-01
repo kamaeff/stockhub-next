@@ -13,7 +13,13 @@ type ModalProps = {
 export default function Card({closeModal}: ModalProps) {
   const items = Array.from({length: 3}).map((_, index) => (
     <div key={index}>
-      <Image src={item} priority={true} alt='product' />
+      <Image
+        src={item}
+        priority={true}
+        width={350}
+        height={270}
+        alt='product'
+      />
     </div>
   ))
 
