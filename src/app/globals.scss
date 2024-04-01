@@ -94,6 +94,10 @@ select {
   z-index: -1000;
 }
 
+.product__img {
+  max-width: 360px;
+}
+
 .basket,
 .order {
   display: flex;

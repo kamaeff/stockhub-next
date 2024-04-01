@@ -11,6 +11,12 @@ type ModalProps = {
 }
 
 export default function Card({closeModal}: ModalProps) {
+  const items = Array.from({length: 3}).map((_, index) => (
+    <div className='product__img' key={index}>
+      <Image src={item} priority={true} alt='product' />
+    </div>
+  ))
+
   return (
     <div className='flex relative flex-col'>
       <Link href='/'>
