@@ -12,7 +12,7 @@ type ModalProps = {
 
 export default function Card({closeModal}: ModalProps) {
   const items = Array.from({length: 3}).map((_, index) => (
-    <div className='product__img' key={index}>
+    <div key={index}>
       <Image src={item} priority={true} alt='product' />
     </div>
   ))
@@ -30,20 +30,13 @@ export default function Card({closeModal}: ModalProps) {
       {/* <div className='mt-20 text-3xl text-center'>Тут будет карточка товара</div> */}
       <div className='flex flex-col mt-14 items-center italic '>
         <Carousel
+          className='product__img'
           infiniteLoop={true}
           autoPlay={true}
           interval={3000}
           showThumbs={false}
         >
-          <div>
-            <Image src={item} priority={true} alt='product' />
-          </div>
-          <div>
-            <Image src={item} priority={true} alt='product' />
-          </div>
-          <div>
-            <Image src={item} priority={true} alt='product' />
-          </div>
+          {items}
         </Carousel>
 
         <div className='max-w-80 text-justify mt-5'>

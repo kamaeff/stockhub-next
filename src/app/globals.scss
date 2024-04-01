@@ -94,8 +94,11 @@ select {
   z-index: -1000;
 }
 
-.product__img {
-  max-width: 360px;
+.product {
+  &__img {
+    align-items: center;
+    max-width: 378px;
+  }
 }
 
 .basket,
