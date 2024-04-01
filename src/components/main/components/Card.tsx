@@ -22,17 +22,17 @@ export default function Card({closeModal}: ModalProps) {
 
       {/* <div className='mt-20 text-3xl text-center'>Тут будет карточка товара</div> */}
       <div className='flex flex-col mt-14 items-center italic '>
-        <Image src={item} priority={true} width={350} alt='item' />
+        <Image src={item} priority={true} alt='item' />
 
-        <div className='text-center'>
-          <h3 className='text-2xl'>Jordan 4 Retro SE Craft Photon Dust</h3>
+        <div className='max-w-80 text-justify mt-5'>
+          <h3 className='text-3xl mb-5'>Jordan 4 Retro SE Craft Photon Dust</h3>
           <p>
             Кроссовки Air Jordan 4 Retro SE "Craft Photon Dust" Основа пары
             выполнена из премиальной гладкой кожи пыльно-серого цвета, а также
             натуральной замши в том же оттенке.
           </p>
         </div>
-
+        <label htmlFor='size'>Разер</label>
         <select className='mt-5' name='size'>
           <option hidden>Выбери размер</option>
           <option value='8'>8 us</option>
@@ -40,7 +40,7 @@ export default function Card({closeModal}: ModalProps) {
           <option value='9'>9 us</option>
         </select>
 
-        <div className='flex mt-7 gap'>
+        <div className='flex mt-7 gap-7'>
           <Link className='basket py-2 px-8 rounded-lg' href='/'>
             <ChevronLeft />В корзину
           </Link>
