@@ -55,7 +55,7 @@ export default function Card({closeModal}: ModalProps) {
           <option value='9'>9 us</option>
         </select>
 
-        <div className='flex mt-7 gap-7'>
+        <div className='flex mt-3 gap-7'>
           <Link className='basket py-2 px-8 rounded-lg' href='/'>
             <ChevronLeft />В корзину
           </Link>
